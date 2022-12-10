@@ -1,4 +1,4 @@
-const spentIcon = "bag-shopping-solid.svg"
+const spentIcon = "https://raw.githubusercontent.com/Yantchili/Control-de-Gasto/1dd3c4882de924a49d9a9c8ab2bc209811509671/bag-shopping-solid.svg"
 const incomeIcon = "credit-card-regular.svg"
 const closeIcon = "close-icon.svg"
 const form = document.querySelector("#form")
