@@ -34,7 +34,7 @@ h2 {
 
 #total {
     margin: auto;
-    font-size: 2vw;
+    font-size: x-large;
     color: white;
 }
 
@@ -51,7 +51,7 @@ h2 {
     margin-right: 20px;
     margin-top: 20px;
     height: 50px;
-    font-size: 1vw;
+    font-size: large;
 }
 
 #panel #gasto {
