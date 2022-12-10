@@ -1,3 +1,6 @@
+const spentIcon = "bag-shopping-solid.svg"
+const incomeIcon = "credit-card-regular.svg"
+const closeIcon = "close-icon.svg"
 const form = document.querySelector("#form")
 const itemlist = document.querySelector("#listaHistorial")
 let itemId = 1
@@ -9,7 +12,6 @@ let total = parseFloat(document.querySelector("#numTotal").innerText)
 form.addEventListener("submit",
     addNew
 )
-
 
 async function addNew(event) {
     event.preventDefault()
@@ -30,7 +32,7 @@ async function addNew(event) {
         if (qty < 0) {
             item.innerHTML = `
         <div id="div01">
-            <span id="icon"><i class="fa-solid fa-basket-shopping" style="color:#8a8aeb"></i></span>
+            <span id="icon"><img src="${spentIcon}" style="color:#8a8aeb"></span>
             <div>
             <p>${concept} </p>
             <span id="date">${date}</span>
@@ -38,14 +40,14 @@ async function addNew(event) {
         </div>
         <div id="div02">
         <P>${qty} </P>
-        <button onclick="deleteItem(${item.id})"><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="deleteItem(${item.id})"><img src="${closeIcon}"></i></button>
         </div>
         `
         }
         else {
             item.innerHTML = `
             <div id="div01">
-            <span id="icon"><i class="fa-solid fa-credit-card" style="color:#5858ef"></i></span>
+            <span id="icon"><img src="${incomeIcon}" style="color:#8a8aeb"></span>
             <div>
             <p>${concept} </p>
             <span id="date">${date}</span>
@@ -53,7 +55,7 @@ async function addNew(event) {
             </div>
             <div id="div02">
             <P>${qty} </P>
-            <button onclick="deleteItem(${item.id})"><i class="fa-solid fa-xmark"></i></button>
+            <button onclick="deleteItem(${item.id})"><img src="${closeIcon}"></button>
             </div>
         `
         }
@@ -80,7 +82,7 @@ async function deleteItem(id) {
     if (qty > 0) { addIncome(-qty) }
     else { addSpent(-qty) }
     calculate(income, spent)
-    console.log(listOfItems)
+
     deleteFromList(id)
     itemToEliminate.remove()
     playSound02()
@@ -88,13 +90,13 @@ async function deleteItem(id) {
 }
 
 function deleteFromList(id) {
-    console.log(listOfItems)
+
     for (let item of listOfItems) {
         if (item != null) {
             if (item[2] == id) {
                 const index = listOfItems.indexOf(item)
                 listOfItems[index] = null
-                console.log(listOfItems)
+
             }
         }
     }
@@ -180,7 +182,7 @@ function printItems(listOfItems) {
                 oldItem.innerHTML =
                     `
                     <div id="div01">
-                    <span id="icon"><i class="fa-solid fa-basket-shopping" style="color:#8a8aeb"></i></span>
+                    <span id="icon"><img src="${spentIcon}" style="color:#8a8aeb"></span>
                     <div>
                     <p>${concept} </p>
                     <span id="date">${date}</span>
@@ -189,14 +191,14 @@ function printItems(listOfItems) {
                     </div>
                     <div id="div02">
                     <P>${qty} </P>
-                    <button onclick="deleteItem(${oldItem.id})"><i class="fa-solid fa-xmark"></i></button>
+                    <button onclick="deleteItem(${oldItem.id})"><img src="${closeIcon}"></button>
                     </div>
 `
             }
             else {
                 oldItem.innerHTML =
                     `<div id="div01">
-                    <span id="icon"><i class="fa-solid fa-credit-card" style="color:#5858ef"></i></span>
+                    <span id="icon"><img src="${incomeIcon}" style="color:#8a8aeb"></span>
                     <div>
                     <p>${concept} </p>
                     <span id="date">${date}</span>
@@ -204,7 +206,7 @@ function printItems(listOfItems) {
                     </div>
                     <div id="div02">
                     <P>${qty} </P>
-                    <button onclick="deleteItem(${oldItem.id})"><i class="fa-solid fa-xmark"></i></button>
+                    <button onclick="deleteItem(${oldItem.id})"><img src="${closeIcon}"></i></button>
                     </div>
 `
             }
