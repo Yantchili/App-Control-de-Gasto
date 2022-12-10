@@ -34,13 +34,14 @@ h2 {
 
 #total {
     margin: auto;
-    font-size: 2vw;
+    font-size: xx-large;
     color: white;
 }
 
 #panel {
 
     display: flex;
+    flex-wrap: nowrap;
     max-width: 450px;
     align-items: center;
     justify-content: space-around;
@@ -51,7 +52,7 @@ h2 {
     margin-right: 20px;
     margin-top: 20px;
     height: 50px;
-    font-size: 1vw;
+    font-size: medium;
 }
 
 #panel #gasto {
@@ -67,7 +68,7 @@ h2 {
 
 #ingreso {
     height: 40px;
-    width: 150px;
+    width: max-content;
     padding-left: 25px;
     padding-right: 20px;
     background-color: #8a8aeb;
